@@ -3,5 +3,46 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#303F9F</color>
-    <color name="grey">#CDCDC1</color>
+    <color name="ddefault">#d1d1d1</color>
+    <color name="bdefault">#f2f2f2</color>
+    <color name="pdefault">#02c8f2</color>
+    <color name="navig_text_p">#02c8f2</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="green">#01987E</color>
+    <color name="text_grey">#71777D</color>
+
+    <color name="detail_button">#ff7200</color>
+
+    <color name="shop_search_bg">#E6E6E6</color>
+
+    <color name="text_hint">#999999</color>
+    <color name="ask_class">#333333</color>
+
+    <color name="ask_button">#02c8f2</color>
+    <color name="ask_button_disable">#c9e8ed</color>
+
+
+    <color name="login_line">#6b6b6b6b</color>
+    <color name="login_line_focus">#000000</color>
+
+    <color name="text_black">#4A4A4A</color>
+    <color name="text_green">#13BE93</color>
+
+    <color name="progress_green">#02C8F2</color>
+
+    <color name="green_navigation_t">#006E5B</color>
+    <color name="grey_navigation_t">#A6A6A6</color>
+    <color name="transparent">#00000000</color>
+    <color name="dark_white">#F9FAFA</color>
+
+    <color name="text_bg_grey">#E6E5EA</color>
+    <color name="grey">#E6E5EA</color>
+
+    <color name="backgroundColor">#E8E8E0</color>
+    <color name="backgroundColorPress">#DBDBD3</color>
+    <color name="red_press">#990000</color>
+    <color name="dark_gray">#4C535B</color>
+    <color name="dark_gray_press">#ff7e8a97</color>
 </resources>

@@ -6,13 +6,55 @@
     tools:context="com.example.plaso.customview.MainActivity">
 
 
-    <com.example.plaso.customview.PieView
+   <!-- <com.example.plaso.customview.view.PieViewView
         android:id="@+id/pie_view"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:background="@color/grey"
+        />-->
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/show_coordinator"
+        android:text="show_coordinator"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/show_coordinator"
+        android:id="@+id/drawing_view"
+        android:text="drawing_view"
         />
 
+    <Button
+        android:id="@+id/swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/drawing_view"
+        android:text="SwipeLayout"
+        />
+
+    <Button
+        android:id="@+id/viewPager_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/swipe_layout"
+        android:text="viewPager_layout"
+        />
+
+    <Button
+        android:id="@+id/wheel_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/swipe_layout"
+        android:text="wheel_picker"
+        />
 
 
 </RelativeLayout>

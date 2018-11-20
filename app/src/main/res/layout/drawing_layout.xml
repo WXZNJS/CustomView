@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:checkImageView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.example.plaso.customview.view.DrawView
+        android:id="@+id/drawing_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <com.example.plaso.customview.view.CheckImage
+            android:id="@+id/clean"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            checkImageView:image="@drawable/clean"
+            checkImageView:imageCheck="@drawable/clean"
+            />
+        <com.example.plaso.customview.view.CheckImage
+            android:id="@+id/paint"
+            android:layout_below="@id/clean"
+            android:layout_marginTop="8dp"
+            checkImageView:image="@drawable/paint"
+            checkImageView:imageCheck="@drawable/paint_check"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            />
+        <com.example.plaso.customview.view.CheckImage
+            android:id="@+id/eraser"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            checkImageView:image="@drawable/eraser"
+            checkImageView:imageCheck="@drawable/eraser_check"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/paint"
+            />
+
+
+    </RelativeLayout>
+</RelativeLayout>

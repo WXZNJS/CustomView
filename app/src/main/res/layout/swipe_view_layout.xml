@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.plaso.customview.view.SwipeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:id="@+id/swipe_view"
+    >
+
+        <LinearLayout
+            android:id="@+id/bottom_wrapper"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:background="#66ddff00"
+            android:tag="Bottom1"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/archive"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/red"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Archive"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="#C7C7CC"
+                android:gravity="center"
+                android:text="Delete" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_wrapper_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:tag="Bottom4">
+
+            <ImageView
+                android:id="@+id/magnifier2"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="#f7e79c"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:src="@drawable/magnifier" />
+
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="#4cd964"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:src="@drawable/star" />
+
+            <ImageView
+                android:id="@+id/trash2"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/red"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:src="@drawable/trash" />
+        </LinearLayout>
+
+        <TextView
+            android:padding="10dp"
+            android:background="@drawable/white"
+            android:tag="Hover"
+            android:text="要有最樸素的生活和最遙遠的夢想，即使明天天寒地凍，山高水遠，路遠馬亡。"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+</com.example.plaso.customview.view.SwipeLayout>

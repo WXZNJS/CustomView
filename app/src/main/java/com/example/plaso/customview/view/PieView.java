@@ -1,4 +1,4 @@
-package com.example.plaso.customview;
+package com.example.plaso.customview.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.example.plaso.customview.PieData;
+import com.example.plaso.customview.dataBean.PieData;
 
 import java.util.ArrayList;
 
@@ -87,6 +87,8 @@ public class PieView extends View {
             pie.setAngle(360*pie.getPercent());
         }
     }
+
+
 
 
 }

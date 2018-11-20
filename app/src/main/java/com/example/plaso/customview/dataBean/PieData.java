@@ -1,4 +1,4 @@
-package com.example.plaso.customview;
+package com.example.plaso.customview.dataBean;
 
 /**
  * Created by zhhang on 2018/8/9.
