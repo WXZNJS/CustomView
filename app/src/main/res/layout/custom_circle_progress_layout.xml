@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.example.plaso.customview.view.CustomCircleProgress
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:bg_color="@color/grey"
+        app:progress_color="@color/green"
+        app:max_progress="100"
+        app:radius="60dp"
+        app:direction="top"
+        app:progress_width="7dp"
+        app:progress_text_color="@color/green"
+        />
+
+    <Button
+        android:id="@+id/restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="reStart"
+        android:layout_below="@id/progress"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/green"
+        android:background="@color/transparent"
+        />
+</RelativeLayout>

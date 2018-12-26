@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.plaso.customview">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -27,7 +28,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:hardwareAccelerated="false"
-        >
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,6 +44,15 @@
         </activity>
         <activity android:name=".activity.ViewPageActivity"/>
         <activity android:name=".activity.WheelPickerActivity"/>
+        <activity android:name=".TestActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            />
+        <activity android:name=".activity.CustomProgressActivity"/>
+        <service android:name=".MyService"
+            android:exported="false"
+            />
+        <service android:name=".MyIntentService">
+        </service>
     </application>
 
 </manifest>

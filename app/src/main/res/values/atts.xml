@@ -49,4 +49,30 @@
             <enum name="right" value="2" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="GifView">
+        <attr name="gif" format="reference" />
+        <attr name="paused" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="GifTheme">
+        <attr name="gifViewStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomCircleProgress">
+        <attr name="bg_color" format="color"/>
+        <attr name="progress_color" format="color"/>
+        <attr name="progress_text_color" format="color"/>
+        <attr name="progress_text_size" format="dimension"/>
+        <attr name="max_progress" format="float"/>
+        <attr name="progress" format="float"/>
+        <attr name="progress_width" format="dimension"/>
+        <attr name="radius" format="dimension"/>
+        <attr name="direction">
+            <enum name="left" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="right" value="2"/>
+            <enum name="bottom" value="3"/>
+        </attr>
+    </declare-styleable>
 </resources>

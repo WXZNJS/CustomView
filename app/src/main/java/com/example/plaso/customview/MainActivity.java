@@ -3,32 +3,50 @@ package com.example.plaso.customview;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.DatePicker;
 import android.widget.ProgressBar;
 
+import com.example.plaso.customview.activity.CustomProgressActivity;
 import com.example.plaso.customview.activity.DrawActivity;
 import com.example.plaso.customview.activity.SwipeViewActivity;
 import com.example.plaso.customview.activity.ViewPageActivity;
 import com.example.plaso.customview.activity.WheelPickerActivity;
 import com.example.plaso.customview.dataBean.PieData;
 import com.example.plaso.customview.view.CoordinatorLayout;
+import com.example.plaso.customview.view.GifView;
 import com.example.plaso.customview.view.PieView;
 import com.example.plaso.customview.view.WheelPicker;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Stack;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends Activity implements View.OnClickListener{
     PieView pieView;
     ProgressBar progressBar;
+    MyView myView;
+    BroadcastReceiver receiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("zh","onCreat");
+        Log.d("zh","Main_onCreate");
+
         setContentView(R.layout.activity_main);
         findViewById(R.id.show_coordinator).setOnClickListener(this);
         findViewById(R.id.drawing_view).setOnClickListener(this);
@@ -36,6 +54,43 @@ public class MainActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.viewPager_layout).setOnClickListener(this);
         findViewById(R.id.wheel_picker).setOnClickListener(this);
 
+        findViewById(R.id.start).setOnClickListener(this);
+        findViewById(R.id.stop).setOnClickListener(this);
+        findViewById(R.id.bind).setOnClickListener(this);
+        findViewById(R.id.unbind).setOnClickListener(this);
+        myView = findViewById(R.id.myView);
+        initBroadCast();
+
+        myView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                    myView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    Log.d("zh","viewWidth_"+myView.getWidth());
+            }
+        });
+
+        myView.post(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("zh","postViewWidth_"+myView.getWidth());
+            }
+        });
+    }
+
+    public void initBroadCast(){
+        receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getAction();
+                if(action.equals(MyIntentService.UNBIND_SERVICE)){
+                    unbindService(connection);
+                }
+            }
+        };
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(MyIntentService.UNBIND_SERVICE);
+        registerReceiver(receiver,filter);
     }
 
 
@@ -47,6 +102,18 @@ public class MainActivity extends Activity implements View.OnClickListener{
         pieView.setData(pieData);
     }
 
+
+    ServiceConnection connection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
 
     @Override
     public void onClick(View view) {
@@ -76,7 +143,70 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 intent4.setClass(MainActivity.this, WheelPickerActivity.class);
                 startActivity(intent4);
                 break;
+            case R.id.start:
+                Intent intent5 = new Intent(this, MyService.class);
+                startService(intent5);
+                break;
+            case R.id.stop:
+                Intent intent6 = new Intent(this, MyService.class);
+                stopService(intent6);
+                break;
+            case R.id.bind:
+                Intent intent7 = new Intent(this, MyService.class);
+                bindService(intent7,connection,BIND_AUTO_CREATE);
+                break;
+            case R.id.unbind:
+                /*Intent intent8 = new Intent(this, MyIntentService.class);
+                bindService(intent8,connection,BIND_AUTO_CREATE);
+                startService(intent8);*/
+                startActivity(new Intent(MainActivity.this,CustomProgressActivity.class));
+                break;
+
         }
     }
 
+    //非静态内部类对外部类的引用改为弱引用。
+    public class MyThread extends Thread{
+        private WeakReference<MainActivity> weakActivity;
+        public MyThread(MainActivity activity){
+            weakActivity = new WeakReference<>(activity);
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("zh","Main_onRestart");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("zh","Main_onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("zh","Main_onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("zh","Main_onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("zh","Main_onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(receiver);
+        Log.d("zh","Main_onDestroy");
+    }
 }
