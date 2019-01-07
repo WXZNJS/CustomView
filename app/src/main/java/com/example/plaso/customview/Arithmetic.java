@@ -10,6 +10,22 @@ import java.util.List;
 import java.util.Stack;
 
 public class Arithmetic {
+    private static Arithmetic mInsatnce;
+
+    private Arithmetic(){
+
+    }
+
+    private static Arithmetic getInstance(){
+        if(null == mInsatnce){
+            synchronized (Arithmetic.class){
+                if(null == mInsatnce){
+                    mInsatnce = new Arithmetic();
+                }
+            }
+        }
+        return mInsatnce;
+    }
 
 
     /**
@@ -67,7 +83,7 @@ public class Arithmetic {
 
     //递归实现
     static Node recursionNode(Node node){
-        if(null == node.next || node == null){
+        if(null == node.next || null == node){
             return node;
         }
         Node nextNode = node.next;
@@ -162,7 +178,7 @@ public class Arithmetic {
         if(root == null){
             return 0;
         }
-
+        LinkedList<Object> objects = new LinkedList<>();
         List<TreeNode> list = new ArrayList<>();
         int count = 0;
         list.add(root);

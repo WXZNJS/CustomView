@@ -29,4 +29,9 @@ public class CustomProgressActivity extends Activity implements View.OnClickList
                 break;
         }
     }
+
+    String text = "1+3*(4-1)";
+    public void getAnswer(){
+
+    }
 }

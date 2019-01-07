@@ -61,6 +61,9 @@ public class MyView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        String a="1";
+        String b="2";
+        a.equals(b);
         Log.d("zh","view______onDraw");
     }
 
@@ -71,4 +74,5 @@ public class MyView extends View {
         super.onDetachedFromWindow();
         Log.d("zh","view______onDetachedFromWindoe");
     }
+
 }

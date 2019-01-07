@@ -9,9 +9,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -152,14 +154,16 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 stopService(intent6);
                 break;
             case R.id.bind:
-                Intent intent7 = new Intent(this, MyService.class);
-                bindService(intent7,connection,BIND_AUTO_CREATE);
+               /* Intent intent7 = new Intent(this, MyService.class);
+                bindService(intent7,connection,BIND_AUTO_CREATE);*/
+               myView.invalidate();
                 break;
             case R.id.unbind:
                 /*Intent intent8 = new Intent(this, MyIntentService.class);
                 bindService(intent8,connection,BIND_AUTO_CREATE);
                 startService(intent8);*/
-                startActivity(new Intent(MainActivity.this,CustomProgressActivity.class));
+//                startActivity(new Intent(MainActivity.this,CustomProgressActivity.class));
+                myView.requestLayout();
                 break;
 
         }
@@ -171,6 +175,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
         public MyThread(MainActivity activity){
             weakActivity = new WeakReference<>(activity);
         }
+    }
+
+    LinkedList linkedList = new LinkedList();
+    public void test(){
     }
 
     @Override
@@ -186,9 +194,21 @@ public class MainActivity extends Activity implements View.OnClickListener{
     }
 
     @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        Log.d("zh","main_postCreate");
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         Log.d("zh","Main_onResume");
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        Log.d("zh","onPostResume");
     }
 
     @Override
@@ -208,5 +228,17 @@ public class MainActivity extends Activity implements View.OnClickListener{
         super.onDestroy();
         unregisterReceiver(receiver);
         Log.d("zh","Main_onDestroy");
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.d("zh","onConfigChanged");
+    }
+
+    //activity布局改动时会回调此方法。setContentView
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
     }
 }
