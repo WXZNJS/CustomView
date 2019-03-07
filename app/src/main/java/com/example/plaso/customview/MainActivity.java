@@ -1,8 +1,6 @@
 package com.example.plaso.customview;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -10,33 +8,25 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.DatePicker;
 import android.widget.ProgressBar;
 
-import com.example.plaso.customview.activity.CustomProgressActivity;
 import com.example.plaso.customview.activity.DrawActivity;
 import com.example.plaso.customview.activity.SwipeViewActivity;
 import com.example.plaso.customview.activity.ViewPageActivity;
 import com.example.plaso.customview.activity.WheelPickerActivity;
 import com.example.plaso.customview.dataBean.PieData;
-import com.example.plaso.customview.view.CoordinatorLayout;
-import com.example.plaso.customview.view.GifView;
+import com.example.plaso.customview.activity.CoordinatorActivity;
 import com.example.plaso.customview.view.PieView;
-import com.example.plaso.customview.view.WheelPicker;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Stack;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class MainActivity extends Activity implements View.OnClickListener{
     PieView pieView;
@@ -122,7 +112,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         switch (view.getId()){
             case R.id.show_coordinator:
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, CoordinatorLayout.class);
+                intent.setClass(MainActivity.this, CoordinatorActivity.class);
                 startActivity(intent);
                 break;
             case R.id.drawing_view:

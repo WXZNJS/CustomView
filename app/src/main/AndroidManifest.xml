@@ -37,7 +37,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.CoordinatorLayout"/>
+        <activity android:name=".activity.CoordinatorActivity"/>
         <activity android:name=".activity.DrawActivity"
             android:screenOrientation="landscape" />
         <activity android:name=".activity.SwipeViewActivity">
