@@ -48,6 +48,8 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
             />
         <activity android:name=".activity.CustomProgressActivity"/>
+
+        <activity android:name=".activity.TokePhotoActivity"/>
         <service android:name=".MyService"
             android:exported="false"
             />

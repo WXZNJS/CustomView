@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 
 import com.example.plaso.customview.activity.DrawActivity;
 import com.example.plaso.customview.activity.SwipeViewActivity;
+import com.example.plaso.customview.activity.TokePhotoActivity;
 import com.example.plaso.customview.activity.ViewPageActivity;
 import com.example.plaso.customview.activity.WheelPickerActivity;
 import com.example.plaso.customview.dataBean.PieData;
@@ -45,6 +46,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.swipe_layout).setOnClickListener(this);
         findViewById(R.id.viewPager_layout).setOnClickListener(this);
         findViewById(R.id.wheel_picker).setOnClickListener(this);
+        findViewById(R.id.image_picker).setOnClickListener(this);
 
         findViewById(R.id.start).setOnClickListener(this);
         findViewById(R.id.stop).setOnClickListener(this);
@@ -154,6 +156,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 startService(intent8);*/
 //                startActivity(new Intent(MainActivity.this,CustomProgressActivity.class));
                 myView.requestLayout();
+                break;
+            case R.id.image_picker:
+                startActivity(new Intent(this,TokePhotoActivity.class));
                 break;
 
         }

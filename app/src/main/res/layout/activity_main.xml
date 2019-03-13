@@ -1,114 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.plaso.customview.MainActivity">
 
 
-   <!-- <com.example.plaso.customview.view.PieViewView
-        android:id="@+id/pie_view"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@color/grey"
-        />-->
+    <!-- <com.example.plaso.customview.view.PieViewView
+         android:id="@+id/pie_view"
+         android:layout_width="120dp"
+         android:layout_height="120dp"
+         android:background="@color/grey"
+         />-->
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:id="@+id/show_coordinator"
-        android:text="show_coordinator"
-        />
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/show_coordinator"
+        android:layout_marginTop="10dp"
+        android:text="show_coordinator" />
+
+    <Button
         android:id="@+id/drawing_view"
-        android:text="drawing_view"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_coordinator"
+        android:layout_marginTop="10dp"
+        android:text="drawing_view" />
 
     <Button
         android:id="@+id/swipe_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_below="@id/drawing_view"
-        android:text="SwipeLayout"
-        />
+        android:layout_marginTop="10dp"
+        android:text="SwipeLayout" />
 
     <Button
         android:id="@+id/viewPager_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_below="@id/swipe_layout"
-        android:text="viewPager_layout"
-        />
+        android:layout_marginTop="10dp"
+        android:text="viewPager_layout" />
 
     <Button
         android:id="@+id/wheel_picker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_below="@id/swipe_layout"
-        android:text="wheel_picker"
-        />
+        android:layout_marginTop="10dp"
+        android:text="wheel_picker" />
+
+    <Button
+        android:id="@+id/image_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/swipe_layout"
+        android:layout_marginTop="10dp"
+        android:text="image_picker" />
 
     <Button
         android:id="@+id/start"
-        android:layout_below="@id/wheel_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_below="@id/image_picker"
         android:layout_marginLeft="10dp"
-        android:text="start"
-        />
+        android:layout_marginTop="30dp"
+        android:text="start" />
 
 
     <Button
         android:id="@+id/stop"
-        android:layout_toRightOf="@id/start"
-        android:layout_below="@id/wheel_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_below="@id/wheel_picker"
         android:layout_marginLeft="10dp"
-        android:text="stop"
-        />
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/start"
+        android:text="stop" />
 
 
     <Button
         android:id="@+id/bind"
-        android:layout_toRightOf="@id/stop"
-        android:layout_below="@id/wheel_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_below="@id/wheel_picker"
         android:layout_marginLeft="10dp"
-        android:text="bind"
-        />
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/stop"
+        android:text="bind" />
 
 
     <Button
         android:id="@+id/unbind"
-        android:layout_toRightOf="@id/bind"
-        android:layout_below="@id/wheel_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_below="@id/wheel_picker"
         android:layout_marginLeft="10dp"
-        android:text="unbind"
-        />
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/bind"
+        android:text="unbind" />
 
-     <com.example.plaso.customview.MyView
-         android:id="@+id/myView"
-         android:layout_width="match_parent"
-         android:layout_height="100dp"
-         android:layout_alignParentBottom="true"
-         />
+    <com.example.plaso.customview.MyView
+        android:id="@+id/myView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true" />
 
 
 </RelativeLayout>
