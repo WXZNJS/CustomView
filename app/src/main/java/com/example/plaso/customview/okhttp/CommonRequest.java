@@ -14,7 +14,8 @@ import okhttp3.RequestBody;
 
 public class CommonRequest {
 
-    /**post请求
+    /**
+     * 普通post请求
      * @param url
      * @param requestParams
      * @return

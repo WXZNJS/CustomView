@@ -17,6 +17,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ProgressBar;
 
 import com.example.plaso.customview.activity.DrawActivity;
+import com.example.plaso.customview.activity.FaceDetectActivity;
 import com.example.plaso.customview.activity.SwipeViewActivity;
 import com.example.plaso.customview.activity.TokePhotoActivity;
 import com.example.plaso.customview.activity.ViewPageActivity;
@@ -158,7 +159,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 myView.requestLayout();
                 break;
             case R.id.image_picker:
-                startActivity(new Intent(this,TokePhotoActivity.class));
+                startActivity(new Intent(this,FaceDetectActivity.class));
                 break;
 
         }

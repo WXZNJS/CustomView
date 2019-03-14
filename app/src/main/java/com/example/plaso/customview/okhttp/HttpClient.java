@@ -64,12 +64,7 @@ public class HttpClient {
                 .Builder().readTimeout(600, TimeUnit.SECONDS).writeTimeout(600, TimeUnit.SECONDS).connectTimeout(600, TimeUnit.SECONDS)
                 .connectionPool(pool)
                 .sslSocketFactory(sslSocketFactory, trustManager)
-                .hostnameVerifier(new HostnameVerifier() {
-                    @Override
-                    public boolean verify(String hostname, SSLSession session) {
-                        return true;
-                    }
-                })
+                .hostnameVerifier((hostname, session) -> true)
                 .build();
 
     }

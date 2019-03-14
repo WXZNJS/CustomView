@@ -50,6 +50,7 @@
         <activity android:name=".activity.CustomProgressActivity"/>
 
         <activity android:name=".activity.TokePhotoActivity"/>
+        <activity android:name=".activity.FaceDetectActivity"/>
         <service android:name=".MyService"
             android:exported="false"
             />
