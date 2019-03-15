@@ -20,12 +20,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
+
+
+
         <ImageView
             android:id="@+id/image"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            />
+
+        <ImageView
+            android:id="@+id/scan_image"
+            android:visibility="gone"
+            android:paddingLeft="45dp"
+            android:paddingRight="45dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scan_shape"
             />
     </FrameLayout>
 

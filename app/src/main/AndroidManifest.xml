@@ -51,6 +51,8 @@
 
         <activity android:name=".activity.TokePhotoActivity"/>
         <activity android:name=".activity.FaceDetectActivity"/>
+        <activity android:name=".activity.SelfCameraActivity"/>
+        <activity android:name=".camera.CameraActivity"/>
         <service android:name=".MyService"
             android:exported="false"
             />

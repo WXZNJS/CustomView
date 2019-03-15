@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 
 import com.example.plaso.customview.activity.DrawActivity;
 import com.example.plaso.customview.activity.FaceDetectActivity;
+import com.example.plaso.customview.activity.SelfCameraActivity;
 import com.example.plaso.customview.activity.SwipeViewActivity;
 import com.example.plaso.customview.activity.TokePhotoActivity;
 import com.example.plaso.customview.activity.ViewPageActivity;

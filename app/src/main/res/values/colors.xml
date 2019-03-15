@@ -45,4 +45,14 @@
     <color name="red_press">#990000</color>
     <color name="dark_gray">#4C535B</color>
     <color name="dark_gray_press">#ff7e8a97</color>
+
+    <color name="Black4">#121415</color>
+    <color name="Black5">#242125</color>
+    <color name="Black6">#313641</color>
+
+    <color name="White">#ffffff</color>
+    <color name="title_bg">#fafafa</color>
+    <color name="Transparent">#00000000</color>
+    <color name="short_video_red">#ff4747</color>
+    <color name="Gray">#eeeeee</color>
 </resources>

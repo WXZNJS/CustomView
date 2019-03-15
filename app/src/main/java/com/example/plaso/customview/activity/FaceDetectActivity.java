@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Camera;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,8 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -49,6 +52,7 @@ import okhttp3.Response;
 public class FaceDetectActivity extends Activity implements View.OnClickListener,TakePhoto.TakeResultListener,InvokeListener {
 
     ImageView imageView;
+    ImageView scanImage;
     FrameLayout container;
     TakePhoto takePhoto;
     InvokeParam invokeParam;
@@ -102,6 +106,8 @@ public class FaceDetectActivity extends Activity implements View.OnClickListener
         Button photoButton = findViewById(R.id.take_photo);
         imageView = findViewById(R.id.image);
         container = findViewById(R.id.container);
+        scanImage = findViewById(R.id.scan_image);
+
         photoButton.setOnClickListener(this);
     }
 
@@ -192,6 +198,23 @@ public class FaceDetectActivity extends Activity implements View.OnClickListener
             layoutParams.setMargins((int)(ints[0]*ration)+leftMargin,(int)(ints[1]*ration),0,0);
             container.addView(imageView,layoutParams);
         }
+
+        addAnimation();
+    }
+
+    private void addAnimation(){
+        scanImage.setVisibility(View.VISIBLE);
+
+        int left = imageView.getLeft();
+        int top = imageView.getTop();
+        int bottom = imageView.getBottom();
+
+        TranslateAnimation animation = new TranslateAnimation(left,left,top,bottom);
+        animation.setDuration(3000);
+        animation.setRepeatCount(Animation.INFINITE);
+
+        scanImage.setAnimation(animation);
+        scanImage.startAnimation(animation);
     }
 
 
