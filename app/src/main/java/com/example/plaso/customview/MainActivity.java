@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ProgressBar;
 
+import com.example.plaso.customview.activity.CameraActivity;
 import com.example.plaso.customview.activity.DrawActivity;
 import com.example.plaso.customview.activity.FaceDetectActivity;
 import com.example.plaso.customview.activity.SelfCameraActivity;
@@ -54,6 +55,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.stop).setOnClickListener(this);
         findViewById(R.id.bind).setOnClickListener(this);
         findViewById(R.id.unbind).setOnClickListener(this);
+        findViewById(R.id.camera).setOnClickListener(this);
         myView = findViewById(R.id.myView);
         initBroadCast();
 
@@ -162,7 +164,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
             case R.id.image_picker:
                 startActivity(new Intent(this,FaceDetectActivity.class));
                 break;
-
+            case R.id.camera:
+                startActivity(new Intent(this,CameraActivity.class));
+                break;
         }
     }
 

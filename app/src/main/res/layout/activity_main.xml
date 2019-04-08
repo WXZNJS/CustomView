@@ -103,6 +103,14 @@
         android:layout_toRightOf="@id/bind"
         android:text="unbind" />
 
+    <Button
+        android:id="@+id/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start"
+        android:layout_marginLeft="10dp"
+        android:text="camera" />
+
     <com.example.plaso.customview.MyView
         android:id="@+id/myView"
         android:layout_width="match_parent"
